@@ -3,10 +3,17 @@ from openai import OpenAI
 from dotenv import load_dotenv
 load_dotenv()
 client =OpenAI()
-response= client.chat.completions.create(
-  model="gpt-5.6-luna",
-  messages=[
-      {"role":"user","content":"Explain what an AI agent is in one sentence."},
-  ],
+messages=[]
+while True:
+    user_input=input("You:")
+    if user_input.strip().lower() in ("exit","quit"):
+        break
+    messages.append({"role":"user","content":user_input})
+
+    response= client.chat.completions.create(
+        model="gpt-5.6-luna",
+        messages=messages,
  )
-print(response.choices[0].message.content)
+    reply=response.choices[0].message.content
+    messages.append({"role":"assistant","content":reply})
+    print("Bot:",reply)
