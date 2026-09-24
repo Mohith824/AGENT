@@ -1,6 +1,5 @@
-# AgenticAI
-
-AgenticAI is a small Python learning project for experimenting with OpenAI-powered terminal agents and simple game development. It currently contains:
+AGENTX
+AgentX is a small Python learning project for experimenting with OpenAI-powered terminal agents and simple game development. It currently contains:
 
 - a basic chatbot example using the OpenAI Chat Completions API
 - a tool-calling mini agent that can inspect files, write files, and run terminal commands
